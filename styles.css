@@ -1,0 +1,101 @@
+:root {
+    --default: #999;
+    --default-hover: rgb(200, 200, 200);
+    --default-hover-shadow: rgb(150, 150, 150);
+
+    --primary: #6d28d9;
+    --primary-hover: #5520aa;
+    --primary-hover-shadow: #481b91;
+
+    --accent: #0284c7;
+    --accent-hover: #01689b;
+    --accent-hover-shadow: #013f5e;
+
+    --danger: #dc2626;
+    --danger-hover: #ad1e1e;
+    --danger-hover-shadow: #791515;
+
+    --custom: linear-gradient(to right, var(--primary), var(--accent));
+    --custom-hover: linear-gradient(to right, var(--primary-hover), var(--accent-hover));
+    --custom-hover-shadow: #777;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--default);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--default-hover);
+    box-shadow: 0px 0px 5px 1px var(--default-hover-shadow);
+}
+
+.btn.btn-primary {
+    background-color: var(--primary);
+    border-color: black;
+    color: white;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    background-color: var(--primary-hover);
+    box-shadow: 0px 0px 5px 1px var(--primary-hover-shadow);
+}
+
+.btn.btn-accent {
+    background-color: var(--accent);
+    border-color: black;
+    color: white;
+}
+
+.btn.btn-accent:hover,
+.btn.btn-accent:focus {
+    background-color: var(--accent-hover);
+    box-shadow: 0px 0px 5px 1px var(--accent-hover-shadow);
+}
+
+.btn.btn-danger {
+    background-color: var(--danger);
+    border-color: black;
+    color: white;
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus {
+    background-color: var(--danger-hover);
+    box-shadow: 0px 0px 5px 1px var(--danger-hover-shadow);
+}
+
+.btn.btn-large {
+    padding: 0.75rem 1.25rem;
+    font-size: 1.5rem;
+}
+
+.btn.btn-small {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+}
+
+.btn.btn-pill {
+    border-radius: 99999px;
+}
+
+.btn.btn-custom {
+    background: var(--custom);
+    border-color: black;
+    color: white;
+}
+
+.btn.btn-custom:hover,
+.btn.btn-custom:focus {
+    background: var(--custom-hover);
+    box-shadow: 0px 0px 5px 1px var(--custom-hover-shadow);
+}
