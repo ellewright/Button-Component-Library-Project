@@ -1,77 +1,54 @@
-:root {
-    --default: #999;
-    --default-hover: rgb(200, 200, 200);
-    --default-hover-shadow: rgb(150, 150, 150);
-
-    --primary: #6d28d9;
-    --primary-hover: #5520aa;
-    --primary-hover-shadow: #481b91;
-
-    --accent: #0284c7;
-    --accent-hover: #01689b;
-    --accent-hover-shadow: #013f5e;
-
-    --danger: #dc2626;
-    --danger-hover: #ad1e1e;
-    --danger-hover-shadow: #791515;
-
-    --custom: linear-gradient(to right, var(--primary), var(--accent));
-    --custom-hover: linear-gradient(to right, var(--primary-hover), var(--accent-hover));
-    --custom-hover-shadow: #777;
-}
+:root {}
 
 * {
     box-sizing: border-box;
 }
 
 .btn {
+    --background-hue: 0;
+    --background-saturation: 0%;
+    --initial-background-lightness: 90%;
+    --background-lightness: var(--initial-background-lightness);
+    --border-lightness: calc(var(--initial-background-lightness) - 20%);
+    background-color: hsl(var(--background-hue),
+            var(--background-saturation),
+            var(--background-lightness));
+    border: 1px solid hsl(var(--background-hue),
+            var(--background-saturation),
+            var(--border-lightness));
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 1px solid var(--default);
     border-radius: 0.25rem;
     cursor: pointer;
 }
 
 .btn:hover,
 .btn:focus {
-    background-color: var(--default-hover);
-    box-shadow: 0px 0px 5px 1px var(--default-hover-shadow);
+    --background-lightness: calc(var(--initial-background-lightness) - 10%);
+    box-shadow: 0 0 5px 0 hsl(var(--background-hue),
+            var(--background-saturation),
+            var(--border-lightness));
 }
 
 .btn.btn-primary {
-    background-color: var(--primary);
-    border-color: black;
+    --background-hue: 271;
+    --background-saturation: 70%;
+    --initial-background-lightness: 50%;
     color: white;
-}
-
-.btn.btn-primary:hover,
-.btn.btn-primary:focus {
-    background-color: var(--primary-hover);
-    box-shadow: 0px 0px 5px 1px var(--primary-hover-shadow);
 }
 
 .btn.btn-accent {
-    background-color: var(--accent);
-    border-color: black;
+    --background-hue: 200;
+    --background-saturation: 100%;
+    --initial-background-lightness: 40%;
     color: white;
-}
-
-.btn.btn-accent:hover,
-.btn.btn-accent:focus {
-    background-color: var(--accent-hover);
-    box-shadow: 0px 0px 5px 1px var(--accent-hover-shadow);
 }
 
 .btn.btn-danger {
-    background-color: var(--danger);
-    border-color: black;
+    --background-hue: 0;
+    --background-saturation: 60%;
+    --initial-background-lightness: 50%;
     color: white;
-}
-
-.btn.btn-danger:hover,
-.btn.btn-danger:focus {
-    background-color: var(--danger-hover);
-    box-shadow: 0px 0px 5px 1px var(--danger-hover-shadow);
 }
 
 .btn.btn-large {
@@ -89,6 +66,14 @@
 }
 
 .btn.btn-custom {
+    --primary: hsl(271, 70%, 50%);
+    --primary-hover: hsl(271, 70%, 40%);
+
+    --accent: hsl(200, 100%, 40%);
+    --accent-hover: hsl(200, 100%, 30%);
+
+    --custom: linear-gradient(to right, var(--primary), var(--accent));
+    --custom-hover: linear-gradient(to right, var(--primary-hover), var(--accent-hover));
     background: var(--custom);
     border-color: black;
     color: white;
@@ -97,5 +82,5 @@
 .btn.btn-custom:hover,
 .btn.btn-custom:focus {
     background: var(--custom-hover);
-    box-shadow: 0px 0px 5px 1px var(--custom-hover-shadow);
+    box-shadow: 0 0 5px 0 black;
 }
